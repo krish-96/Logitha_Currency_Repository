@@ -19,5 +19,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('currency_app.urls')),
     path('', include('NewsLetter_app.urls')),
-    path('', include('search_app.urls')),
 ]
