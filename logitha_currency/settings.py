@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'currency_app',
     'NewsLetter_app',
+    'search_app',
 ]
 
 MIDDLEWARE = [
