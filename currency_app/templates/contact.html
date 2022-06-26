@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block title %}
+    Contact US
+{% endblock %}
+
+{% block banner_title %}
+    Contact
+{% endblock  %}
+
+<!-- section -->
+<div class="section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
+                    <div class="heading_main text_align_center">
+                        <h2><span class="theme_color"></span>Contact</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+
+{%  block content %}
+{% include "contact_code.html" %}
+{% endblock %}
