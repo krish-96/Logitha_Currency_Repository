@@ -50,16 +50,10 @@
                      </div>
                  </nav>
                  <div class="search-box">
-                     <form action="/search/" method="post">
-                         {% csrf_token %}
-                         <input class="search-txt" name="query" placeholder="Search" type="text">
-                         <img alt="#" src="{% static '' %}images/search_icon.png"/>
-                         <span class="search-btn">
-                             <img alt="#" src="{% static '' %}images/search_icon.png"/>
-                         </span>
-
-                     </form>
-
+                    <input type="text" class="search-txt" placeholder="Search">
+                    <a class="search-btn">
+                        <img src="{% static '' %}images/search_icon.png" alt="#" />
+                    </a>
                 </div>
                 </div>
             </div>
