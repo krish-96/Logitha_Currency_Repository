@@ -3,7 +3,8 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-12 offset-lg-3">
                     <div class="full">
-                        <form class="contact_form_inner" action="#">
+                        <form method="post" action="/contactus/" class="contact_form_inner"  >
+                            {% csrf_token %}
                             <fieldset>
                                 <div class="field">
                                     <input type="text" name="name" placeholder="Your name" />
@@ -15,10 +16,10 @@
                                     <input type="text" name="phone_no" placeholder="Phone number" />
                                 </div>
                                 <div class="field">
-                                    <textarea placeholder="Message"></textarea>
+                                    <input type="text" name="Message" placeholder="Message" />
                                 </div>
                                 <div class="field center">
-                                    <button>SEND</button>
+                                    <button type="submit">SEND</button>
                                 </div>
                             </fieldset>
                         </form>

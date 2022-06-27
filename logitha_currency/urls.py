@@ -20,4 +20,5 @@ urlpatterns = [
     path('', include('currency_app.urls')),
     path('', include('NewsLetter_app.urls')),
     path('', include('search_app.urls')),
+    path('', include('contactus_app.urls')),
 ]
