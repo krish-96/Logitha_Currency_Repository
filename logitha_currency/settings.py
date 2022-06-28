@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'search_app',
 
     'accounts_app',
+    
+
 
 ]
 
