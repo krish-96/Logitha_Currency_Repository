@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Register | LogIn
+{% endblock %}
+{% block banner_title %}
+Register | LogIn
+{% endblock  %}
+
+<!-- Start Banner -->
+<div class="section inner_page_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner_title">
+                    <h3>Register | LogIn</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner -->
+{% block content %}
+<!-- section -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 layout_padding">
+                <div class="full paddding_left_15">
+                    <h2 class="text_align_left">Don't have an account? </h2>
+                    <div class="heading_main text_align_right">
+                        <h2><span class="theme_color">Register</span></h2>
+                    </div>
+
+                </div>
+                <div class="full paddding_left_15">
+                    <form action="/register/" method="post">
+                        {% csrf_token %}
+
+                        <div class="field">
+                            <input name="email" placeholder="{{creation_form.email.label}}" type="email"/>
+                        </div>
+                        <div class="field">
+                            <input name="name" placeholder="{{creation_form.name.label}}" type="text"/>
+                        </div>
+                        <div class="field">
+                            <input name="phone_no" placeholder="{{creation_form.phone_no.label}}" type="text"/>
+                        </div>
+                        <div class="field">
+                            <input name="password1" placeholder="{{creation_form.password1.label}}" type="password"/>
+                        </div>
+                        <div class="field">
+                            <input name="password2" placeholder="{{creation_form.password2.label}}" type="password"/>
+                        </div>
+
+                        <button class="main_bt" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 layout_padding">
+                <div class="full paddding_left_15">
+                    <h2 class="text_align_right">Alredy have an account? </h2>
+                    <div class="heading_main text_align_left">
+                        <h2><span class="theme_color">LogIn</span></h2>
+                    </div>
+                </div>
+                <div class="full paddding_left_15">
+                    <form action="/login/" method="post">
+                        {% csrf_token %}
+                        <div class="field">
+                            <input class="form-control form-control" id="username" name="login_email" placeholder="Your Registered Mail"
+                                   type="text">
+                        </div>
+                        <div class="field">
+                            <input class="form-control form-control" id="password" name="login_password" placeholder="Your Password"
+                                   type="password">
+                        </div>
+                        <button class="main_bt" type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+
+{% endblock %}

@@ -21,4 +21,7 @@ urlpatterns = [
     path('', include('NewsLetter_app.urls')),
     path('', include('search_app.urls')),
     path('', include('contactus_app.urls')),
+    path('',include('accounts_app.urls'))
+
+
 ]

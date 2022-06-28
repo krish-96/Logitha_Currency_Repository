@@ -9,7 +9,7 @@ def NewsLetterView(request):
 
     if request.method == "POST":
 
-        if 'newsletter_mail' in request.POST:
+        if 'newsletter_mail' in request.POST :
             newsletter_email = request.POST['newsletter_mail']
 
             subscribers = NewsLetter.objects.all()
@@ -20,7 +20,7 @@ def NewsLetterView(request):
                 data = NewsLetter()
                 data.mail = newsletter_email
                 data.save()
-                messages.success(request, f"Thanks for ur interest {newsletter_email.upper()}")
+                messages.success(request, f"Thanks for ur interest {newsletter_email.title()}")
                 return redirect('home')
             else:
                 messages.warning(request, "Sorry already subscribed!")
