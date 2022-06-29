@@ -16,6 +16,7 @@
                         </li>
                         {% if request.user.is_authenticated %}
                         <li>
+                            <a class="join_bt" href="{% url 'profile' %}">Profile</a>
                             <a class="join_bt" href="{% url 'logout' %}">LogOut</a></li>
                         {% else %}
                         <li>

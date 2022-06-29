@@ -25,7 +25,7 @@ def register_view(request):
         'creation_form':creation_form,
         'login_form':login_form,
     }
-    return  render(request, 'register.html', context)
+    return render(request, 'register.html', context)
 
 def login_view(request):
     if request.method == 'POST':
@@ -41,6 +41,13 @@ def login_view(request):
             return redirect('register')
 
     return redirect('home')
+
+def profile_view(request):
+
+    context = {
+
+    }
+    return render(request, 'profile.html', context)
 
 
 def logout_view(request):
