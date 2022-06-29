@@ -3,6 +3,7 @@ from .forms import UserCreationForm, UserLoginForm
 from django.contrib import messages
 
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -35,17 +36,18 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, f"Welcome {user.name.title()}! You are logged in now.")
-            return redirect('home')
+            return redirect('profile')
         else:
             messages.warning(request, 'Username OR Password is incorrect!')
             return redirect('register')
 
     return redirect('home')
 
+@login_required(login_url='register')
 def profile_view(request):
 
     context = {
-
+        'name' : request.user.name,
     }
     return render(request, 'profile.html', context)
 
